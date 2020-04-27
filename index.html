@@ -72,7 +72,7 @@
             <div class='header__text'>Software Developer <br> Data Scientist <br> Automation Engineer <br> Energy Analyst </div>
             </div>
             <script>
-                new Vivus('header__name', { type: 'sync', duration: 1000, file: "/static/img/name-outline-b.svg" , onReady: fillName}, fillName);
+                new Vivus('header__name', { type: 'sync', duration: 1000, file: "{{site.url}}/static/img/name-outline-b.svg" , onReady: fillName}, fillName);
             </script>
         </header>
 
@@ -86,15 +86,15 @@
             <div class="about">
                 <div class="about__picture">
                     <picture class="about__img">
-                        <source srcset="/static/img/andrew-headshot-m.jpg" media="(max-width: 37.5em)"> 
-                        <img src="/static/img/andrew-headshot-m.jpg" alt="Andrew" class="about__img">
+                        <source srcset="{{site.url}}/static/img/andrew-headshot-m.jpg" media="(max-width: 37.5em)"> 
+                        <img src="{{site.url}}/static/img/andrew-headshot-m.jpg" alt="Andrew" class="about__img">
                     </picture>
                 </div>
                 <div class="about__vr"></div>
                 <div class="about__text">
                     <p class="paragraph">My inherent innovative streak and thirst for learning has me undertaking new software passion projects on a regular basis. I like pursuing ideas that can change the world. Currently I work as a Mechanical Engineer focusing on the optimization of buildings' energy and water utilization. I am always open to new opportunities and love to learn as I am quick to take on new knowledge. In my current role, due to my versatility with programming, I have enjoyed many opportuntities to lead proof-of-concepts, and be part of scrum teams for innovation challenges and hackathons.</p>  
                     <a href="#section-skills" class="btn-text u-margin-right-medium">My Skills &rarr;</a>         
-                    <a href="pdf/andrewbottomley-cv.pdf" target="_blank" class="btn-text">Download My Resume &rarr;</a>         
+                    <a href="{{site.url}}/static/pdf/andrewbottomley-cv.pdf" target="_blank" class="btn-text">Download My Resume &rarr;</a>         
                 </div>
             </div>
         </section>
