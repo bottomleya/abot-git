@@ -633,6 +633,9 @@ skills{
         grid-template-rows:repeat(3, min-content)
     }
 }
+.projects__heading{
+    opacity:0
+}
 .project{
     background-color:rgba(233,228,222,0.8);
     box-shadow:0 1rem 2rem rgba(0,0,0,0.2);
