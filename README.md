@@ -1,5 +1,5 @@
 ## Andrew Bottomley - Portfolio Homepage
-Homepage designed to showcase who I am & some basic programming fundamentals - [Link](https://bottomleya.github.io)
+Homepage designed to showcase who I am & some basic programming fundamentals - [Link](https://bottomleya.github.io/abot-git/)
 
 # Features
  * Basic OOP principles
