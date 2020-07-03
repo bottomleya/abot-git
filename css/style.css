@@ -638,7 +638,7 @@ skills{
     margin: 0 auto
 }
 .projects__heading{
-    opacity:0
+    opacity:1
 }
 .project__text{
     font-size:1.4rem;
@@ -658,7 +658,7 @@ skills{
     height:min-content;
     -webkit-backface-visibility:hidden;
     backface-visibility:hidden;
-    opacity:0
+    opacity:1
 }
 .project__icon-container{
     display:flex;
