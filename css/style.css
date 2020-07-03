@@ -633,6 +633,10 @@ skills{
         grid-template-rows:repeat(3, min-content)
     }
 }
+.projects{
+    width: 80%;
+    margin: 0 auto
+}
 .projects__heading{
     opacity:0
 }
