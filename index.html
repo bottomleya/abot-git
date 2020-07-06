@@ -15,6 +15,7 @@
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/vivus.js"></script>
         <script src="js/svg/svg.js"></script>
+        <script src="js/skills.js"></script>
 
         <title>Andrew Bottomley | Portfolio</title>
 
@@ -29,18 +30,18 @@
             
             // Class for creating a new SVG histogram
             class SVGHistogram {
-                constructor(jsonData, divID) {
-                    this.data = jsonData;
+                constructor(divID) {
+                    this.data = skills;
                     this.ID = divID;
                 }
                 draw() {
                     var divObj = document.getElementById(this.ID);
-                    $(this.ID).load("portfolio.views.skillsData");
+                    $(this.ID).load("this.data");
                 }
             }
             // Class for loading JSON data into Skills histogram
             document.addEventListener('DOMContentLoaded', function(event) {
-                skillsHistogram = new SVGHistogram("hello world","skills__histogram");
+                skillsHistogram = new SVGHistogram("skills__histogram");
                 skillsHistogram.draw();
             })
         </script>
