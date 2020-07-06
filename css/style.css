@@ -666,6 +666,7 @@ skills{
     backface-visibility:hidden;
     opacity: 0.8;
     margin: 5vmin;
+    margin-bottom: 15vmax
 }
 .project__icon-container{
     display:flex;
