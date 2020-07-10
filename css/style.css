@@ -660,8 +660,8 @@ skills{
     overflow:hidden
 }
 .project__picture:hover{    
-    -webkit-transform:scale(1.3) translateY(-0.1rem);
-    transform:scale(1.3) translateY(-0.1rem)
+    -webkit-transform:scale(1.02) translateY(-0.1rem);
+    transform:scale(1.02) translateY(-0.1rem)
 }
 @media only screen and (max-width: 50em){
     .project__picture{
