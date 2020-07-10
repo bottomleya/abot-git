@@ -651,11 +651,12 @@ skills{
     margin: 0 auto
 }
 .project__picture{
-    width:24rem;
+    width:80%;
     height:100%;
     -webkit-filter:contrast(80%);
     filter:contrast(80%);
     box-shadow:0 2rem 5rem rgba(0,0,0,0.6);
+    text-align: center;
     overflow:hidden
 }
 @media only screen and (max-width: 50em){
