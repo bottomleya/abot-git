@@ -31,20 +31,45 @@
             
             // Class for creating a new SVG histogram
             class SVGHistogram {
-                constructor(divID) {
+                constructor(canvasID) {
                     this.data = skills;
-                    this.ID = divID;
+                    this.ID = canvasID;
+                    
+                    this.ctc = document.getElementById(this.ID).getContext('2d');
+                    
                 }
                 draw() {
                     var divObj = document.getElementById(this.ID);
                     $(this.ID).load("this.data");
                 }
+                
+                template() {
+                    var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [{
+                            label: 'My First dataset',
+                            backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            data: [0, 10, 5, 2, 20, 30, 45]
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {}
+                    }
+                }
             }
             // Class for loading JSON data into Skills histogram
             document.addEventListener('DOMContentLoaded', function(event) {
-                skillsHistogram = new SVGHistogram("skills__histogram");
-                skillsHistogram.draw();
+                skillsChart = new SVGHistogram("skills__chart");
+                skillsChart.draw();
             })
+            
         </script>
     </head>
     <body>
@@ -110,7 +135,7 @@
             <div class="skills">
                 <div class="skills__text">
                     <p class="paragraph">My skillset is varied across a broad spectrum of fields, which is a consequence of my diverse interests and potential.</p>
-                    <div class="skills__histogram" id="skills__histogram"></div>
+                    <div class="skills__chart"><canvas id="skills__chart"></canvas></div>
                 </div>
             </div>
 
