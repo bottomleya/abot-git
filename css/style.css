@@ -650,6 +650,26 @@ skills{
     overflow: scroll;
     margin: 0 auto
 }
+.project__picture{
+    width:24rem;
+    height:100%;
+    -webkit-filter:contrast(80%);
+    filter:contrast(80%);
+    box-shadow:0 2rem 5rem rgba(0,0,0,0.6);
+    overflow:hidden
+}
+@media only screen and (max-width: 50em){
+    .project__picture{
+        grid-row:1 / 2;
+        width:40rem;
+        margin:0 auto
+    }
+}
+@media only screen and (max-width: 25em){
+    .project__picture{
+        width:20rem
+    }
+}
 
 .project__img{
     width:100%;
