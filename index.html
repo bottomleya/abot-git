@@ -53,6 +53,12 @@
                 draw() {
                     Chart.defaults.global.defaultFontColor = '#eee';
                     Chart.defaults.global.defaultColor = "#eee";
+                    Chart.scaleService.updateScaleDefaults('linear', {
+                        ticks: {
+                            min: 0,
+                            max: 100
+                        }
+                    });
                     var chart = new Chart(this.ctx, {
                         // The type of chart we want to create
                         type: 'bar',
