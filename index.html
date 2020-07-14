@@ -30,11 +30,7 @@
                     this.ctx = document.getElementById(this.ID).getContext('2d');
                 }
                 draw() {
-                    var divObj = document.getElementById(this.ID);
-                    $(this.ID).load("this.data");
-                }
-                template() {
-                    var chart = new Chart(ctx, {
+                    var chart = new Chart(this.ctx, {
                         // The type of chart we want to create
                         type: 'line',
 
