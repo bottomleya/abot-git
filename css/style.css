@@ -711,7 +711,7 @@ skills{
     color:rgba(68,83,115,0.8)
 }
 .project__heading{
-    font-size:1.6rem;
+    font-size:3.6rem;
     padding-bottom:2rem;
     padding-top: 1.5rem;
     color:#445373
@@ -731,7 +731,7 @@ skills{
 }
 
 .skills-heading,.skills-hr{
-    opacity:0
+    opacity:1
 }
 .work-heading,.work-hr{
     opacity:0
@@ -774,7 +774,7 @@ skills{
     height:min-content;
     -webkit-backface-visibility:hidden;
     backface-visibility:hidden;
-    opacity:0
+    opacity:1
 }
 .skill__icon-container{
     display:flex;
@@ -821,7 +821,7 @@ skills{
     transform:translateY(-1.5rem) scale(1.03)
 }
 .skills-heading,.skills-hr{
-    opacity:0
+    opacity:1
 }
 .animateFromLeft{
     -webkit-animation:moveInFarLeft 0.5s ease-out;
