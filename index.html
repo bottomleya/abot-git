@@ -25,7 +25,8 @@
             // Class for creating a new SVG histogram
             class SVGHistogram {
                 constructor(canvasID) {
-                    this.data = skills;
+                    this.data = new skills();
+                    console.log(this.data);
                     this.ID = canvasID;
                     this.ctx = document.getElementById(this.ID).getContext('2d');
                 }
