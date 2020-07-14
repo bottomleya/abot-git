@@ -1029,7 +1029,9 @@ body{
     margin-top:-12rem;
     margin-bottom: -12rem;
     padding:15rem 0;
-    padding-bottom:30rem
+    padding-bottom:30rem;
+    -webkit-clip-path:polygon(0 0, 100% 0, 100% 90vh, 50% 100%, 0 90vh);
+    clip-path:polygon(0 0, 100% 0, 100% 90vh, 50% 100%, 0 90vh)
 }
 @media only screen and (max-width: 25em){
     .section-about{
