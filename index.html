@@ -37,10 +37,10 @@
                     for (var key in this.dataJSON["skills"]) {
                         var labels = [];
                         var values = [];
-                        for (var item in this.dataJSON["skills"][key]) {
+                        for (var i in this.dataJSON["skills"][key]) {
                             this.data.push({stack: key,
-                                            x: item["skill"],
-                                            y: item["proficiency"]
+                                            x: this.dataJSON["skills"][key][i]["skill"],
+                                            y: this.dataJSON["skills"][key][i]["proficiency"]
                                            });
                         }
                         this.labels.push(key);
