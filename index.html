@@ -25,29 +25,49 @@
             // Class for creating a new SVG histogram
             class SVGHistogram {
                 constructor(canvasID) {
-                    this.data = new skills();
+                    this.dataJSON = new skills();
                     console.log(this.data);
                     this.ID = canvasID;
                     this.ctx = document.getElementById(this.ID).getContext('2d');
+                    this.parseData();
+                }
+                parseData() {
+                    this.data = [];
+                    for (var key in this.dataJSON) {
+                        var labels = [];
+                        var values = [];
+                        for (var item in this.dataJSON[key]) {
+                            labels.push(item["skill"]);
+                            values.push(item["proficiency"]);
+                        }
+                        this.data.push({"key": key,
+                                        "labels": labels,
+                                        "values": values
+                                       });
+                    }
                 }
                 draw() {
                     var chart = new Chart(this.ctx, {
                         // The type of chart we want to create
-                        type: 'line',
+                        type: 'bar',
 
                         // The data for our dataset
                         data: {
                             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                            datasets: [{
-                                label: 'My First dataset',
-                                backgroundColor: 'rgb(255, 99, 132)',
-                                borderColor: 'rgb(255, 99, 132)',
-                                data: [0, 10, 5, 2, 20, 30, 45]
-                            }]
+                            datasets: [this.data]
                         },
 
                         // Configuration options go here
-                        options: {}
+                        options: {
+                            scales: {
+                                xAxes: [{
+                                    stacked: true
+                                }],
+                                yAxes: [{
+                                    stacked: true
+                                }]
+                            }
+                        }
                     })
                 }
             }
