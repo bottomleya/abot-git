@@ -26,7 +26,7 @@
             class SVGHistogram {
                 constructor(canvasID) {
                     this.dataJSON = new skills();
-                    console.log(this.data);
+                    console.log(this.dataJSON);
                     this.ID = canvasID;
                     this.ctx = document.getElementById(this.ID).getContext('2d');
                     this.parseData();
@@ -34,11 +34,10 @@
                 parseData() {
                     this.data = [];
                     this.labels = [];
-                    for (var key in this.dataJSON) {
+                    for (var key in this.dataJSON["skills"]) {
                         var labels = [];
                         var values = [];
                         for (var item in this.dataJSON[key]) {
-                            
                             this.data.push({stack: key,
                                             x: item["skill"],
                                             y: item["proficiency"]
