@@ -21,13 +21,6 @@
         <title>Andrew Bottomley | Portfolio</title>
 
         <script>
-            // Function for filling in "Andrew Bottomley" SVG on homepage
-            function fillName() {
-                header__name = document.getElementById('header__name');
-                svgObj = header__name.getElementsByTagName('svg')[0];
-                path = svgObj.getElementsByTagName('path')[0];
-                SVG(path).animate(4000,300,'now').attr({opacity: 1});
-            };
             
             // Class for creating a new SVG histogram
             class SVGHistogram {
@@ -57,7 +50,7 @@
                         },
 
                         // Configuration options go here
-                        options: {}
+                        options: {};
                     }
                 }
             }
@@ -67,6 +60,13 @@
                 skillsChart.draw();
             })
             
+            // Function for filling in "Andrew Bottomley" SVG on homepage
+            function fillName() {
+                header__name = document.getElementById('header__name');
+                svgObj = header__name.getElementsByTagName('svg')[0];
+                path = svgObj.getElementsByTagName('path')[0];
+                SVG(path).animate(4000,300,'now').attr({opacity: 1});
+            };
         </script>
     </head>
     <body>
@@ -164,6 +164,7 @@
                             <a href="https://www.kaggle.com/abot7898/ashrae-iii-metering-data-explore-train"><img src="images/ASHRAE-III-Screenshot.PNG" alt="ASHRAE" class="project__img"></a></div>
                         </picture>
                     </div>
+                </div>
             </div>
         </section>
 
