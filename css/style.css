@@ -1039,7 +1039,7 @@ body{
     }
 }
 .section-skills{
-    padding:10rem 0;
+    padding:5vh 0;
     z-index:10;
     margin-top:-5rem;
     background-image:linear-gradient(to right bottom, rgba(68,83,115,0.5), rgba(51,51,51,0.9)),url(../images/collaroy-sunrise-m.jpg);
