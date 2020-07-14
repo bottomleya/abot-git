@@ -33,17 +33,18 @@
                 }
                 parseData() {
                     this.data = [];
+                    this.labels = [];
                     for (var key in this.dataJSON) {
                         var labels = [];
                         var values = [];
                         for (var item in this.dataJSON[key]) {
-                            labels.push(item["skill"]);
-                            values.push(item["proficiency"]);
+                            
+                            this.data.push({stack: key,
+                                            x: item["skill"],
+                                            y: item["proficiency"]
+                                           });
                         }
-                        this.data.push({"key": key,
-                                        "labels": labels,
-                                        "values": values
-                                       });
+                        this.labels.push(key);
                     }
                 }
                 draw() {
@@ -53,8 +54,8 @@
 
                         // The data for our dataset
                         data: {
-                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                            datasets: [this.data]
+                            labels: this.labels,
+                            datasets: this.data
                         },
 
                         // Configuration options go here
