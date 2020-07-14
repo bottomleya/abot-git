@@ -38,12 +38,14 @@
                         var labels = [];
                         var values = [];
                         for (var i in this.dataJSON["skills"][key]) {
-                            this.data.push(this.dataJSON["skills"][key][i]["proficiency"]);
+                            //this.data.push(this.dataJSON["skills"][key][i]["proficiency"]);
                             this.labels.push(this.dataJSON["skills"][key][i]["skill"]);
-                            //this.data.push({"stack": key,
-                            //                "x": this.dataJSON["skills"][key][i]["skill"],
-                            //                "y": this.dataJSON["skills"][key][i]["proficiency"]
-                            //               });
+                            this.data.push({stack: key,
+                                            label: this.dataJSON["skills"][key][i]["skill"],
+                                            backgroundColor: '#ff8580',
+                                            borderColor: '#c4cbff',
+                                            data: this.dataJSON["skills"][key][i]["proficiency"]
+                                           });
                         }
                         //this.labels.push(key);
                     }
@@ -66,16 +68,29 @@
                         // The data for our dataset
                         data: {
                             labels: this.labels,
-                            datasets: [{
-                                label: "skills",
-                                backgroundColor: '#42455c',
-                                borderColor: '#c4cbff',
-                                data: this.data
-                            }]
+                            datasets: this.data
                         },
+                        //data: {
+                        //    labels: this.labels,
+                        //    datasets: [{
+                        //        label: "skills",
+                        //        backgroundColor: '#ff8580',
+                        //        borderColor: '#c4cbff',
+                        //        data: this.data
+                        //    }]
+                        //},
 
                         // Configuration options go here
-                        options: {}
+                        options: {
+                            scales: {
+                                xAxes: [{
+                                    stacked: true
+                                }],
+                                yAxes: [{
+                                    stacked: true
+                                }]
+                            }
+                        }
                     });
                 }
             }
