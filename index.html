@@ -54,10 +54,11 @@
                     var chart = new Chart(this.ctx, {
                         // The type of chart we want to create
                         type: 'bar',
+                        
+                        labels: this.labels,
 
                         // The data for our dataset
                         data: {
-                            labels: this.labels,
                             datasets: this.data
                         },
 
