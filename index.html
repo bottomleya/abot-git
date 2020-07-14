@@ -51,9 +51,11 @@
                     console.log(this.labels);
                 }
                 draw() {
+                    Chart.defaults.global.defaultFontColor = '#eee';
+                    Chart.defaults.global.defaultColor = "#eee";
                     var chart = new Chart(this.ctx, {
                         // The type of chart we want to create
-                        type: 'line',
+                        type: 'bar',
                         
                         // The data for our dataset
                         data: {
