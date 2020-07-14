@@ -69,10 +69,9 @@
                         // The type of chart we want to create
                         type: 'bar',
                         
-                        labels: this.data[key]["descriptions"],
-                        
                         // The data for our dataset
                         data: {
+                            labels: this.data[key]["descriptions"],
                             datasets: [{
                                 label: key,
                                 data: this.data[key]["values"]
