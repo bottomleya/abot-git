@@ -23,7 +23,7 @@
         <script>
             
             // Class for creating a new SVG histogram
-            class SVGHistogram {
+            class skillsChart {
                 constructor(canvasID) {
                     this.dataJSON = new skills();
                     console.log(this.dataJSON);
@@ -45,10 +45,10 @@
                         }
                         this.labels.push(key);
                     }
-                }
-                draw() {
                     console.log(this.data);
                     console.log(this.labels);
+                }
+                draw() {
                     var chart = new Chart(this.ctx, {
                         // The type of chart we want to create
                         type: 'bar',
@@ -75,7 +75,7 @@
             }
             // Class for loading JSON data into Skills histogram
             document.addEventListener('DOMContentLoaded', function(event) {
-                skillsChart = new SVGHistogram("skills__chart");
+                skillsChart = new skillsChart("skills__chart");
                 skillsChart.draw();
             })
             
