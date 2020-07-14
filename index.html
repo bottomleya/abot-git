@@ -32,27 +32,31 @@
                     this.parseData();
                 }
                 parseData() {
-                    this.data = [];
+                    this.data = {};
                     this.labels = [];
                     for (var key in this.dataJSON["skills"]) {
-                        var labels = [];
+                        var descriptions = [];
                         var values = [];
                         for (var i in this.dataJSON["skills"][key]) {
+                            values.push(this.dataJSON["skills"][key][i]["proficiency"]);
+                            columns.push(this.dataJSON["skills"][key][i]["skill"]);
                             //this.data.push(this.dataJSON["skills"][key][i]["proficiency"]);
                             //this.labels.push(this.dataJSON["skills"][key][i]["skill"]);
-                            this.data.push({stack: key,
-                                            label: this.dataJSON["skills"][key][i]["skill"],
-                                            backgroundColor: '#ff8580',
-                                            borderColor: '#c4cbff',
-                                            data: [this.dataJSON["skills"][key][i]["proficiency"]]
-                                           });
+                            //this.data.push({stack: key,
+                            //                label: this.dataJSON["skills"][key][i]["skill"],
+                            //                backgroundColor: '#ff8580',
+                            //                borderColor: '#c4cbff',
+                            //                data: [this.dataJSON["skills"][key][i]["proficiency"]]
+                            //               });
                         }
+                        this.data[key] = {"descriptions": descriptions,
+                                          "values": values};
                         this.labels.push(key);
                     }
                     console.log(this.data);
                     console.log(this.labels);
                 }
-                draw() {
+                draw(key) {
                     Chart.defaults.global.defaultFontColor = '#eee';
                     Chart.defaults.global.defaultColor = "#eee";
                     Chart.scaleService.updateScaleDefaults('linear', {
@@ -67,8 +71,8 @@
                         
                         // The data for our dataset
                         data: {
-                            labels: this.labels,
-                            datasets: this.data
+                            labels: this.data[key]["descriptions"],
+                            datasets: this.data[key]["values"]
                         },
                         //data: {
                         //    labels: this.labels,
@@ -81,23 +85,14 @@
                         //},
 
                         // Configuration options go here
-                        options: {
-                            scales: {
-                                xAxes: [{
-                                    stacked: true
-                                }],
-                                yAxes: [{
-                                    stacked: true
-                                }]
-                            }
-                        }
+                        options: {}
                     });
                 }
             }
             // Class for loading JSON data into Skills histogram
             document.addEventListener('DOMContentLoaded', function(event) {
                 skillsChart = new skillChart("skills__chart");
-                skillsChart.draw();
+                skillsChart.draw("Frontend Development");
             })
             
             // Function for filling in "Andrew Bottomley" SVG on homepage
