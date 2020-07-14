@@ -27,7 +27,7 @@
                 constructor(canvasID) {
                     this.data = skills;
                     this.ID = canvasID;
-                    this.ctc = document.getElementById(this.ID).getContext('2d');
+                    this.ctx = document.getElementById(this.ID).getContext('2d');
                 }
                 draw() {
                     var divObj = document.getElementById(this.ID);
@@ -51,7 +51,7 @@
 
                         // Configuration options go here
                         options: {}
-                    });
+                    })
                 }
             }
             // Class for loading JSON data into Skills histogram
