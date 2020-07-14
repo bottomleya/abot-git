@@ -22,8 +22,8 @@
 
         <script>
             
-            // Class for creating a new SVG histogram
-            class skillsChart {
+            // Class for creating a new skills chart
+            class skillChart {
                 constructor(canvasID) {
                     this.dataJSON = new skills();
                     console.log(this.dataJSON);
@@ -75,7 +75,7 @@
             }
             // Class for loading JSON data into Skills histogram
             document.addEventListener('DOMContentLoaded', function(event) {
-                skillsChart = new skillsChart("skills__chart");
+                skillsChart = new skillChart("skills__chart");
                 skillsChart.draw();
             })
             
