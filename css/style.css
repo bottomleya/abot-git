@@ -798,11 +798,8 @@ body{
 .header{
     height:95vh;
     background-image:linear-gradient(to right bottom, rgba(68,83,115,0.1), rgba(51,51,51,0.9)),url(../images/longreef-landscape-m.jpg);
-    -webkit-transition: background 1.5s linear;
-    -moz-transition: background 1.5s linear;
-    -o-transition: background 1.5s linear;
-    -ms-transition: background 1.5s linear;
-    transition: background 1.5s linear;
+    -webkit-animation:fadeIn 3s ease-out;
+    animation:fadeIn 3s ease-out;
     background-size:cover;
     text-align:center;
     background-position:left;
