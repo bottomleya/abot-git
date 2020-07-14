@@ -3,19 +3,19 @@ class skills{
 		this.skills = {
 			"Frontend Development": [
 				{
-					"skill": "HTML/CSS",
+					"skill": "HTML & CSS",
 					"proficiency": 65
 				},
 				{
-					"skill": "JavaScript/JQuery",
+					"skill": "JavaScript & JQuery",
 					"proficiency": 70
 				},		
 				{
-					"skill": "Bootstrap/AngularJS",
+					"skill": "Bootstrap & AngularJS",
 					"proficiency": 20
 				},		
 				{
-					"skill": "Git/GitExtensions",
+					"skill": "Git & GitExtensions",
 					"proficiency": 70
 				},		
 				{
@@ -23,7 +23,7 @@ class skills{
 					"proficiency": 75
 				},		
 				{
-					"skill": "Bootstrap/AngularJS",
+					"skill": "Bootstrap & AngularJS",
 					"proficiency": 20
 				}	
 			],
@@ -59,7 +59,7 @@ class skills{
 					"proficiency": 80
 				},	
 				{
-					"skill": "Collaboration/Teamwork",
+					"skill": "Collaboration & Teamwork",
 					"proficiency": 95
 				},	
 				{
