@@ -55,7 +55,7 @@
                         // The type of chart we want to create
                         type: 'bar',
                         
-                        labels: this.labels,
+                        labels: ["HTML & CSS", "JavaScript & JQuery", "Bootstrap & AngularJS"],
 
                         // The data for our dataset
                         data: {
@@ -63,12 +63,21 @@
                                 label: "skills",
                                 backgroundColor: '#42455c',
                                 borderColor: '#c4cbff',
-                                data: this.data
+                                data: [1,2,3]
                             }]
                         },
 
                         // Configuration options go here
-                        options: {}
+                        options: {
+                            scales: {
+                                xAxes: [{
+                                    stacked: false
+                                }],
+                                yAxes: [{
+                                    stacked: false
+                                }]
+                            }
+                        }
                     })
                 }
             }
