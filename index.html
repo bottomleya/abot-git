@@ -36,8 +36,10 @@
                     this.labels = [];
                     this.descriptions = [];
                     for (var key in this.dataJSON["skills"]) {
-                        // initialize new key
+                        // initialize keys
                         this.data[key] = [];
+                    }
+                    for (var key in this.dataJSON["skills"]) {
                         // loop through skills
                         for (var i in this.dataJSON["skills"][key]) {
                             // add values to data 
