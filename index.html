@@ -50,25 +50,10 @@
                                     this.data[jKey].push(0);
                                 }
                             }
-                            //values.push(this.dataJSON["skills"][key][i]["proficiency"]);
-                            //descriptions.push(this.dataJSON["skills"][key][i]["skill"]);
                             this.descriptions.push(this.dataJSON["skills"][key][i]["skill"]);
-                            //this.data.push(this.dataJSON["skills"][key][i]["proficiency"]);
-                            //this.labels.push(this.dataJSON["skills"][key][i]["skill"]);
-                            //this.data.push({stack: key,
-                            //                label: this.dataJSON["skills"][key][i]["skill"],
-                            //                backgroundColor: '#ff8580',
-                            //                borderColor: '#c4cbff',
-                            //                data: [this.dataJSON["skills"][key][i]["proficiency"]]
-                            //               });
                         }
-                        //this.data[key] = {"descriptions": descriptions,
-                        //                  "values": values};
                         this.labels.push(key);
                     }
-                    console.log(this.data);
-                    console.log(this.descriptions);
-                    console.log(this.labels);
                 }
                 draw() {
                     Chart.defaults.global.defaultFontColor = '#eee';
@@ -105,18 +90,14 @@
                                 }
                             ]
                         },
-                        //data: {
-                        //    labels: this.labels,
-                        //    datasets: [{
-                        //        label: "skills",
-                        //        backgroundColor: '#ff8580',
-                        //        borderColor: '#c4cbff',
-                        //        data: this.data
-                        //    }]
-                        //},
-
                         // Configuration options go here
-                        options: {}
+                        options: {
+                            scales: {
+                                xAxes: [{
+                                    barPercentage: 0.9
+                                }]
+                            }
+                        }
                     });
                 }
             }
