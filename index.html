@@ -34,12 +34,22 @@
                 parseData() {
                     this.data = {};
                     this.labels = [];
+                    this.descriptions = [];
                     for (var key in this.dataJSON["skills"]) {
-                        var descriptions = [];
-                        var values = [];
+                        // initialize new key
+                        this.data[key] = [];
+                        // loop through skills
                         for (var i in this.dataJSON["skills"][key]) {
-                            values.push(this.dataJSON["skills"][key][i]["proficiency"]);
-                            descriptions.push(this.dataJSON["skills"][key][i]["skill"]);
+                            // add values to data 
+                            for (var jKey in this.dataJSON["skills"]) {
+                                if (jKey == key) {
+                                    this.data[key].push(this.dataJSON["skills"][key][i]["proficiency"]);
+                                } else {
+                                    this.data[jKey].push(0);
+                                }
+                            //values.push(this.dataJSON["skills"][key][i]["proficiency"]);
+                            //descriptions.push(this.dataJSON["skills"][key][i]["skill"]);
+                            this.descriptions.push(this.dataJSON["skills"][key][i]["skill"]);
                             //this.data.push(this.dataJSON["skills"][key][i]["proficiency"]);
                             //this.labels.push(this.dataJSON["skills"][key][i]["skill"]);
                             //this.data.push({stack: key,
@@ -49,14 +59,15 @@
                             //                data: [this.dataJSON["skills"][key][i]["proficiency"]]
                             //               });
                         }
-                        this.data[key] = {"descriptions": descriptions,
+                        //this.data[key] = {"descriptions": descriptions,
                                           "values": values};
                         this.labels.push(key);
                     }
                     console.log(this.data);
+                    console.log(this.descriptions);
                     console.log(this.labels);
                 }
-                draw(key) {
+                draw() {
                     Chart.defaults.global.defaultFontColor = '#eee';
                     Chart.defaults.global.defaultColor = "#eee";
                     Chart.scaleService.updateScaleDefaults('linear', {
@@ -71,11 +82,25 @@
                         
                         // The data for our dataset
                         data: {
-                            labels: this.data[key]["descriptions"],
-                            datasets: [{
-                                label: key,
-                                data: this.data[key]["values"]
-                            }]
+                            labels: this.descriptions,
+                            datasets: [
+                                {
+                                    label: this.labels[0],
+                                    data: this.data[this.labels[0]],
+                                    backgroundColor: '#ff8580',
+                                    borderColor: '#c4cbff'
+                                }, {
+                                    label: this.labels[1],
+                                    data: this.data[this.labels[1]],
+                                    backgroundColor: '#ff8580',
+                                    borderColor: '#c4cbff'
+                                }, {
+                                    label: this.labels[2],
+                                    data: this.data[this.labels[2]],
+                                    backgroundColor: '#ff8580',
+                                    borderColor: '#c4cbff'
+                                }
+                            ]
                         },
                         //data: {
                         //    labels: this.labels,
